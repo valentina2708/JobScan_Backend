@@ -1,15 +1,15 @@
 module.exports = {
   development: {
-    client: 'pg', // PostgreSQL
+    client: 'pg', 
     connection: {
-      host: '127.0.0.1', // O la IP del servidor PostgreSQL
-      user: 'postgres', // Cambia esto por tu usuario de PostgreSQL
-      password: 'postgres', // Cambia esto por tu contraseña
+      host: '127.0.0.1', 
+      user: 'postgres',
+      password: 'postgres', 
       database: 'jobsearch' ,
       port: 5432,  
     },
     migrations: {
-      directory: './migrations' // Asegurar que este directorio existe
+      directory: './migrations'
     },
     seeds: {
       directory: './seeds'

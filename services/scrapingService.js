@@ -33,7 +33,7 @@ const scrapeJobs = async () => {
       
         await page.waitForSelector('.box_offer', { timeout: 60000, visible: true });
 
-        // Extraer datos de los empleos
+    
         const jobs = await page.evaluate(() => {
             return Array.from(document.querySelectorAll('.box_offer')).map(job => ({
                 title: job.querySelector('.js-o-link')?.innerText.trim() || 'No disponible',
@@ -52,10 +52,10 @@ const scrapeJobs = async () => {
         }
 
         await db('jobs').insert(jobs);
-        console.log('✅ Trabajos guardados en la base de datos:', jobs.length);
+        console.log('Trabajos guardados en la base de datos:', jobs.length);
 
     } catch (error) {
-        console.error('❌ Error en scraping:', error.message);
+        console.error('Error en scraping:', error.message);
     }
 };
 

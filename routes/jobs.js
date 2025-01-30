@@ -4,7 +4,7 @@ const db = require('../db/connection');
 
 const router = express.Router();
 
-// Obtener todos los empleos
+
 router.get('/', async (req, res) => {
     console.log('Ruta /jobs alcanzada');
     try {
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Ejecutar scraping manualmente
+
 router.get('/scrape', async (req, res) => {
     try {
         await scrapeJobs();
